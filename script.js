@@ -13,7 +13,10 @@ let form;
 let currentId = 0;
 let currentItem;
 
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
+localStorage.setItem('items', JSON.stringify(itemsArray));
+const data = JSON.parse(localStorage.getItem('items'));
 
 function main() {
   prepareDOMElements();
@@ -47,14 +50,18 @@ function prepareDOMEvents() {
 function addNewItemViaForm (e) {
   e.preventDefault();
   addNewTodo();
+  
 }
 
 function addNewTodo() {
   
   if (mainInput.value.trim() !== ''){
+    itemsArray.push(mainInput.value);
+    localStorage.setItem('items', JSON.stringify(itemsArray));
+    
     addNewElementToList(mainInput.value);
     mainInput.value = '';
-  }
+   }
 }
 
 
@@ -70,6 +77,7 @@ function addNewElementToList(title   /* Title, author, id */) {
   // $list.appendChild(createElement('nowy', 2))
   const newElement = createElement(title);
   list.appendChild(newElement);
+  
 }
 
 function createElement(title /* Title, author, id */) {
