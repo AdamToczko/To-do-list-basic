@@ -70,6 +70,9 @@ function prepareInitialList() {
   initialList.forEach(todo => {
     addNewElementToList(todo);
   });
+  data.forEach(todo=> {
+    addNewElementToList(todo);
+  })
 }
 
 function addNewElementToList(title   /* Title, author, id */) {
