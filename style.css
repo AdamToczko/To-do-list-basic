@@ -1,11 +1,12 @@
 body {
     margin: 0;
-    min-width: 250px;
+    min-width: 300px;
   }
   
   /* Include the padding and border in an element's total width and height */
   * {
     box-sizing: border-box;
+   
   }
   
   /* Remove margins and padding from the list */
@@ -60,3 +61,41 @@ body {
   .listCompleted {
     text-decoration: line-through;
   }
+
+  .btns {
+    position: fixed;
+    right: 2%;
+    display: inline-flex;
+    margin-right: 5%;
+    
+  }
+
+  .todo {
+    /* margin-left:5%; */
+    font-size: 1.5em;
+  }
+
+  .header {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #list {
+    margin: 0 auto;
+    text-align: center;
+    
+    margin-top: 3%;
+  }
+
+  li:nth-child(odd) {
+    background: lightyellow;
+}
+li:nth-child(even) {
+    background: lightblue;
+}
+
+.edit,.delete,.done {
+  font-size: 1em;
+  margin-left: 1%;
+  
+}

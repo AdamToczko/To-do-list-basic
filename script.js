@@ -91,23 +91,27 @@ function createElement(title /* Title, author, id */) {
   newElement.dataset.id = currentId;
   const titleElement = document.createElement('span');
   titleElement.innerText = title;
+  titleElement.classList.add('todo')
   newElement.appendChild(titleElement);
   
+  const divBtns = document.createElement('div');
+  divBtns.classList.add('btns')
+  newElement.appendChild(divBtns)
 
   const newButton = document.createElement('button'); // tworzymy nowy button
   newButton.innerHTML = 'edytuj'; // dodajemy napis w buttonie 'edytuj'
   newButton.classList.add('edit')
-  newElement.appendChild(newButton);  // dodajemy przycisk do naszej komórki   
+  divBtns.appendChild(newButton);  // dodajemy przycisk do naszej komórki   
   
   const newButton2 = document.createElement('button'); // tworzymy nowy button
   newButton2.innerHTML = 'usuń'; // dodajemy napis w buttonie 'delete'
   newButton2.classList.add('delete')
-  newElement.appendChild(newButton2);  // dodajemy przycisk do naszej komórki
+  divBtns.appendChild(newButton2);  // dodajemy przycisk do naszej komórki
   
   const newButton3 = document.createElement('button'); // tworzymy nowy button
   newButton3.innerHTML = 'wykonane'; // dodajemy napis w buttonie 'wykonane'
   newButton3.classList.add('done')
-  newElement.appendChild(newButton3);  // dodajemy przycisk do naszej komórki  
+  divBtns.appendChild(newButton3);  // dodajemy przycisk do naszej komórki  
 
     return newElement;
 }
@@ -116,7 +120,7 @@ function createElement(title /* Title, author, id */) {
 function listClickManager(event) {
   // Rozstrzygnięcie co dokładnie zostało kliknięte i wywołanie odpowiedniej funkcji
  
-  currentItem = event.target.parentElement.dataset.id;
+  currentItem = event.target.parentElement.parentElement.dataset.id;
 
   if (event.target.className === 'delete') {
       removeListElement();
