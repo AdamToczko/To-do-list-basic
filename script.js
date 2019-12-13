@@ -99,17 +99,17 @@ function createElement(title /* Title, author, id */) {
   newElement.appendChild(divBtns)
 
   const newButton = document.createElement('button'); // tworzymy nowy button
-  newButton.innerHTML = 'edytuj'; // dodajemy napis w buttonie 'edytuj'
+  newButton.innerHTML = 'edit'; // dodajemy napis w buttonie 'edytuj'
   newButton.classList.add('edit')
   divBtns.appendChild(newButton);  // dodajemy przycisk do naszej komórki   
   
   const newButton2 = document.createElement('button'); // tworzymy nowy button
-  newButton2.innerHTML = 'usuń'; // dodajemy napis w buttonie 'delete'
+  newButton2.innerHTML = 'delete'; // dodajemy napis w buttonie delete
   newButton2.classList.add('delete')
   divBtns.appendChild(newButton2);  // dodajemy przycisk do naszej komórki
   
   const newButton3 = document.createElement('button'); // tworzymy nowy button
-  newButton3.innerHTML = 'wykonane'; // dodajemy napis w buttonie 'wykonane'
+  newButton3.innerHTML = 'done'; // dodajemy napis w buttonie 'wykonane'
   newButton3.classList.add('done')
   divBtns.appendChild(newButton3);  // dodajemy przycisk do naszej komórki  
 

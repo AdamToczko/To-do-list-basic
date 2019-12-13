@@ -1,6 +1,11 @@
 body {
     margin: 0;
     min-width: 300px;
+    /* background: rgb(241,241,247);
+    background: linear-gradient(90deg, rgba(241,241,247,1) 0%, rgba(133,246,172,1) 100%); */
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0.2) 0%, rgba(9,9,121,0.2) 0%, rgba(0,212,255,0.2) 0%);
+
   }
   
   /* Include the padding and border in an element's total width and height */
@@ -20,7 +25,7 @@ body {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 200px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -32,19 +37,23 @@ body {
   
   /* Modal Content */
   .modal-content {
-    background-color: #fefefe;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 0%);
+
     margin: auto;
-    padding: 20px;
+    padding: 40px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
+   
   }
   
   /* The Close Button */
   .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
+    color: crimson;
+    margin-left: 4%;
+    font-size: 30px;
     font-weight: bold;
+    
   }
   
   .close:hover,
@@ -78,6 +87,8 @@ body {
   .header {
     margin: 0 auto;
     text-align: center;
+    margin-top:50px;
+    
   }
 
   #list {
@@ -88,14 +99,28 @@ body {
   }
 
   li:nth-child(odd) {
-    background: lightyellow;
-}
-li:nth-child(even) {
-    background: lightblue;
+    /* background: rgb(2,0,36); */
+    background: linear-gradient(90deg, rgba(2,0,36,0.2) 0%, rgba(9,9,121,0.2) 0%, rgba(0,212,255,0.2) 0%);
+
 }
 
-.edit,.delete,.done {
+
+.edit,.delete,.done, #addTodo, .addBtn {
   font-size: 1em;
-  margin-left: 1%;
-  
+  margin-left: 2%;
+  background: inherit;
+  border: #888 1px solid;
+  border-radius: 10%;
+  margin-right:2%;
+  color: crimson;
+}
+
+#popupInput {
+  font-size: 1em;
+  color: crimson;
+  width: 60%;
+}
+#myInput {
+  font-size: 1.2em;
+  width: 25%;
 }
