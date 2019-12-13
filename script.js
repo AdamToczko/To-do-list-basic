@@ -13,10 +13,10 @@ let form;
 let currentId = 0;
 let currentItem;
 
-let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+let todosArray = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
 
-localStorage.setItem('items', JSON.stringify(itemsArray));
-const data = JSON.parse(localStorage.getItem('items'));
+localStorage.setItem('todos', JSON.stringify(todosArray));
+const data = JSON.parse(localStorage.getItem('todos'));
 
 function main() {
   prepareDOMElements();
@@ -56,8 +56,8 @@ function addNewItemViaForm (e) {
 function addNewTodo() {
   
   if (mainInput.value.trim() !== ''){
-    itemsArray.push(mainInput.value);
-    localStorage.setItem('items', JSON.stringify(itemsArray));
+    todosArray.push(mainInput.value);
+    localStorage.setItem('todos', JSON.stringify(todosArray));
     
     addNewElementToList(mainInput.value);
     mainInput.value = '';
