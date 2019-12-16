@@ -1,6 +1,7 @@
 // Tutaj dodacie zmienne globalne do przechowywania elementów takich jak np. lista czy input do wpisywania nowego todo
 let list;
-const initialList = ['Dzisiaj robię usuwanie', 'Nakarm psa'];
+// const initialList = ['Learn Java Script', 'Walk the dog'];
+const initialList = [];
 let modal;
 let modalClose; 
 let modalClose2;
@@ -12,10 +13,8 @@ let addItem;
 let form;
 let currentId = 0;
 let currentItem;
-
 let todosArray = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
 
-localStorage.setItem('todos', JSON.stringify(todosArray));
 const data = JSON.parse(localStorage.getItem('todos'));
 
 function main() {
@@ -25,7 +24,7 @@ function main() {
 }
 
 function prepareDOMElements() {
-  // To będzie idealne miejsce do pobrania naszych elementów z drzewa DOM i zapisanie ich w zmiennych
+ 
   list = document.getElementById('list');
   modal = document.querySelector(".modal");
   modalClose = document.querySelector(".close"); 
@@ -33,9 +32,21 @@ function prepareDOMElements() {
   editList = document.querySelector("#acceptTodo");
   modalInput = document.getElementById('popupInput');
   mainInput = document.getElementById('myInput');
-  addItem = document.getElementById('addTodo'); // do serwera wylaczyc
+  addItem = document.getElementById('addTodo'); 
   form = document.getElementById('addForm')
+
+  // let todo = {
+  //   text: title,
+  //   checked: false,
+  //   id: currentId
+  // }
+  
+
+// localStorage.setItem('todos', JSON.stringify(todosArray));
+
+
 }
+
 
 function prepareDOMEvents() {
   // Przygotowanie listenerów
@@ -67,27 +78,35 @@ function addNewTodo() {
 
 function prepareInitialList() {
   // Tutaj utworzymy sobie początkowe todosy. Mogą pochodzić np. z tablicy
-  initialList.forEach(todo => {
-    addNewElementToList(todo);
-  });
+ 
+  // initialList.forEach(todo => {
+  //   addNewElementToList(todo);
+  // });
   data.forEach(todo=> {
     addNewElementToList(todo);
   })
 }
 
-function addNewElementToList(title   /* Title, author, id */) {
+function addNewElementToList(title, id, done   /* Title, author, id */) {
   //obsługa dodawanie elementów do listy
   // $list.appendChild(createElement('nowy', 2))
+ 
   const newElement = createElement(title);
   list.appendChild(newElement);
   
 }
 
-function createElement(title /* Title, author, id */) {
+function createElement(title, /* Title, author, id */) {
   // Tworzyc reprezentacje DOM elementu return newElement
   currentId++;
+ 
+  // let newElement = {
+  //   text: title,
+  //   checked: false,
+  //   id: currentId
+  // }
 
-  const newElement = document.createElement('li');
+  let newElement = document.createElement('li');
   newElement.dataset.id = currentId;
   const titleElement = document.createElement('span');
   titleElement.innerText = title;
@@ -123,6 +142,7 @@ function listClickManager(event) {
   currentItem = event.target.parentElement.parentElement.dataset.id;
 
   if (event.target.className === 'delete') {
+    
       removeListElement();
   } else if (event.target.className === 'edit'){
       editListElement();
@@ -132,8 +152,13 @@ function listClickManager(event) {
 }
 
 function removeListElement() {
+  console.log(currentItem)
   const line = document.querySelector('li[data-id="' + currentItem + '"]');
   list.removeChild(line);
+  const abc = JSON.parse(localStorage.getItem('todos'));
+  const d = abc.splice(currentItem -1, 1)
+  localStorage.setItem('todos', JSON.stringify(abc));
+
 }
 
 function editListElement() {
