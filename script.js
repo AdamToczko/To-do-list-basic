@@ -165,6 +165,7 @@ function editListElement() {
   openPopup();
   text = document.querySelector('li[data-id="' + currentItem + '"] span').textContent;
   popupInput.value = text;
+
 }
 
 function openPopup() {
@@ -181,9 +182,14 @@ function modalClosed2() {
 
 
 function editAccept () {
-  const line2 = document.querySelector('li[data-id="' + currentItem + '"] span');
   
+  const line2 = document.querySelector('li[data-id="' + currentItem + '"] span');
+  console.log(currentItem)
   line2.innerText = popupInput.value;
+  
+  const abc = JSON.parse(localStorage.getItem('todos'));
+  const d = abc.splice(currentItem -1, 1, popupInput.value)
+  localStorage.setItem('todos', JSON.stringify(abc));
   modalClosed();
 }
 
