@@ -155,9 +155,9 @@ function removeListElement() {
   console.log(currentItem)
   const line = document.querySelector('li[data-id="' + currentItem + '"]');
   list.removeChild(line);
-  const abc = JSON.parse(localStorage.getItem('todos'));
-  const d = abc.splice(currentItem -1, 1)
-  localStorage.setItem('todos', JSON.stringify(abc));
+  const localS = JSON.parse(localStorage.getItem('todos'));
+  const operationOnTodos  = localS.splice(currentItem -1, 1)
+  localStorage.setItem('todos', JSON.stringify(localS));
 
 }
 
@@ -187,9 +187,9 @@ function editAccept () {
   console.log(currentItem)
   line2.innerText = popupInput.value;
   
-  const abc = JSON.parse(localStorage.getItem('todos'));
-  const d = abc.splice(currentItem -1, 1, popupInput.value)
-  localStorage.setItem('todos', JSON.stringify(abc));
+  const localS = JSON.parse(localStorage.getItem('todos'));
+  const operationOnTodos = localS.splice(currentItem -1, 1, popupInput.value)
+  localStorage.setItem('todos', JSON.stringify(localS));
   modalClosed();
 }
 
