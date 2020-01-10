@@ -1,6 +1,4 @@
-// Tutaj dodacie zmienne globalne do przechowywania elementów takich jak np. lista czy input do wpisywania nowego todo
 let list;
-// const initialList = ['Learn Java Script', 'Walk the dog'];
 const initialList = [];
 let modal;
 let modalClose; 
@@ -34,24 +32,12 @@ function prepareDOMElements() {
   mainInput = document.getElementById('myInput');
   addItem = document.getElementById('addTodo'); 
   form = document.getElementById('addForm')
-
-  // let todo = {
-  //   text: title,
-  //   checked: false,
-  //   id: currentId
-  // }
   
-
-// localStorage.setItem('todos', JSON.stringify(todosArray));
-
-
 }
 
 
 function prepareDOMEvents() {
-  // Przygotowanie listenerów
   list.addEventListener('click', listClickManager);
-  // addItem.addEventListener('click', addNewElementToList);
   form.addEventListener('submit', addNewItemViaForm);
   modalClose.addEventListener('click', modalClosed);
   modalClose2.addEventListener('click', modalClosed2);
@@ -77,19 +63,12 @@ function addNewTodo() {
 
 
 function prepareInitialList() {
-  // Tutaj utworzymy sobie początkowe todosy. Mogą pochodzić np. z tablicy
- 
-  // initialList.forEach(todo => {
-  //   addNewElementToList(todo);
-  // });
   data.forEach(todo=> {
     addNewElementToList(todo);
   })
 }
 
 function addNewElementToList(title, id, done   /* Title, author, id */) {
-  //obsługa dodawanie elementów do listy
-  // $list.appendChild(createElement('nowy', 2))
  
   const newElement = createElement(title);
   list.appendChild(newElement);
@@ -97,14 +76,8 @@ function addNewElementToList(title, id, done   /* Title, author, id */) {
 }
 
 function createElement(title, /* Title, author, id */) {
-  // Tworzyc reprezentacje DOM elementu return newElement
   currentId++;
- 
-  // let newElement = {
-  //   text: title,
-  //   checked: false,
-  //   id: currentId
-  // }
+
 
   let newElement = document.createElement('li');
   newElement.dataset.id = currentId;
