@@ -125,8 +125,8 @@ function listClickManager(event) {
 
 function removeListElement() {
   console.log(currentItem)
-  const line = document.querySelector('li[data-id="' + currentItem + '"]');
-  list.removeChild(line);
+  const removeItem = document.querySelector('li[data-id="' + currentItem + '"]');
+  list.removeChild(removeItem);
   const localS = JSON.parse(localStorage.getItem('todos'));
   const operationOnTodos  = localS.splice(currentItem -1, 1)
   localStorage.setItem('todos', JSON.stringify(localS));
@@ -155,9 +155,9 @@ function modalClosed2() {
 
 function editAccept () {
   
-  const line2 = document.querySelector('li[data-id="' + currentItem + '"] span');
+  const editSelected = document.querySelector('li[data-id="' + currentItem + '"] span');
   console.log(currentItem)
-  line2.innerText = popupInput.value;
+  editSelected.innerText = popupInput.value;
   
   const localS = JSON.parse(localStorage.getItem('todos'));
   const operationOnTodos = localS.splice(currentItem -1, 1, popupInput.value)
@@ -166,8 +166,8 @@ function editAccept () {
 }
 
 function markAsDone() {
-  const line3 = document.querySelector('li[data-id="' + currentItem + '"] span');
-  line3.classList.add('listCompleted');
+  const markCompleted = document.querySelector('li[data-id="' + currentItem + '"] span');
+  markCompleted.classList.add('listCompleted');
  
 }
 
