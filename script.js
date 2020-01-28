@@ -83,27 +83,27 @@ function createElement(title) {
   newElement.dataset.id = currentId;
   const titleElement = document.createElement('span');
   titleElement.innerText = title;
-  titleElement.classList.add('todo')
+  titleElement.classList.add('task-style')
   newElement.appendChild(titleElement);
   
   const divBtns = document.createElement('div');
-  divBtns.classList.add('btns')
+  divBtns.classList.add('buttons-style')
   newElement.appendChild(divBtns)
 
-  const newButton = document.createElement('button'); // tworzymy nowy button
-  newButton.innerHTML = 'edit'; // dodajemy napis w buttonie 'edytuj'
-  newButton.classList.add('edit')
-  divBtns.appendChild(newButton);  // dodajemy przycisk do naszej komórki   
+  const newButton = document.createElement('button'); 
+  newButton.innerHTML = 'EDIT'; 
+  newButton.classList.add('edit','btn','btn-primary','btn-sm')
+  divBtns.appendChild(newButton); 
+
+  const newButton2 = document.createElement('button'); 
+  newButton2.innerHTML = 'DELETE'; 
+  newButton2.classList.add('delete','btn','btn-danger','btn-sm')
+  divBtns.appendChild(newButton2); 
   
-  const newButton2 = document.createElement('button'); // tworzymy nowy button
-  newButton2.innerHTML = 'delete'; // dodajemy napis w buttonie delete
-  newButton2.classList.add('delete')
-  divBtns.appendChild(newButton2);  // dodajemy przycisk do naszej komórki
-  
-  const newButton3 = document.createElement('button'); // tworzymy nowy button
-  newButton3.innerHTML = 'done'; // dodajemy napis w buttonie 'wykonane'
-  newButton3.classList.add('done')
-  divBtns.appendChild(newButton3);  // dodajemy przycisk do naszej komórki  
+  const newButton3 = document.createElement('button'); 
+  newButton3.innerHTML = 'DONE'; 
+  newButton3.classList.add('done','btn','btn-secondary','btn-sm')
+  divBtns.appendChild(newButton3); 
 
     return newElement;
 }
