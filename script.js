@@ -68,14 +68,14 @@ function prepareInitialList() {
   })
 }
 
-function addNewElementToList(title, id, done   /* Title, author, id */) {
+function addNewElementToList(title) {
  
   const newElement = createElement(title);
   list.appendChild(newElement);
   
 }
 
-function createElement(title, /* Title, author, id */) {
+function createElement(title) {
   currentId++;
 
 
