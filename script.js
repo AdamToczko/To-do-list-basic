@@ -110,16 +110,15 @@ function createElement(title) {
 
 
 function listClickManager(event) {
-  // Rozstrzygnięcie co dokładnie zostało kliknięte i wywołanie odpowiedniej funkcji
- 
+
   currentItem = event.target.parentElement.parentElement.dataset.id;
 
-  if (event.target.className === 'delete') {
+  if (event.target.className === 'delete btn btn-danger btn-sm') {
     
       removeListElement();
-  } else if (event.target.className === 'edit'){
+  } else if (event.target.className === 'edit btn btn-primary btn-sm'){
       editListElement();
-  } else if (event.target.className === 'done') {
+  } else if (event.target.className === 'done btn btn-secondary btn-sm') {
       markAsDone();
   }
 }
