@@ -90,20 +90,20 @@ function createElement(title) {
   divBtns.classList.add('buttons-style')
   newElement.appendChild(divBtns)
 
-  const newButton = document.createElement('button'); 
-  newButton.innerHTML = 'EDIT'; 
-  newButton.classList.add('edit','btn','btn-primary','btn-sm')
-  divBtns.appendChild(newButton); 
+  const editButton = document.createElement('button'); 
+  editButton.innerHTML = 'EDIT'; 
+  editButton.classList.add('edit','btn','btn-primary','btn-sm')
+  divBtns.appendChild(editButton); 
 
-  const newButton2 = document.createElement('button'); 
-  newButton2.innerHTML = 'DELETE'; 
-  newButton2.classList.add('delete','btn','btn-danger','btn-sm')
-  divBtns.appendChild(newButton2); 
+  const deleteButton = document.createElement('button'); 
+  deleteButton.innerHTML = 'DELETE'; 
+  deleteButton.classList.add('delete','btn','btn-danger','btn-sm')
+  divBtns.appendChild(deleteButton); 
   
-  const newButton3 = document.createElement('button'); 
-  newButton3.innerHTML = 'DONE'; 
-  newButton3.classList.add('done','btn','btn-secondary','btn-sm')
-  divBtns.appendChild(newButton3); 
+  const doneButton = document.createElement('button'); 
+  doneButton.innerHTML = 'DONE'; 
+  doneButton.classList.add('done','btn','btn-secondary','btn-sm')
+  divBtns.appendChild(doneButton); 
 
     return newElement;
 }
