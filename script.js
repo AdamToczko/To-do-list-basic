@@ -24,7 +24,7 @@ function main() {
 function prepareDOMElements() {
  
   list = document.getElementById('list');
-  modal = document.querySelector(".modal");
+  modal = document.querySelector("#myModal");
   modalClose = document.querySelector(".close"); 
   modalClose2 = document.querySelector("#cancelTodo");
   editList = document.querySelector("#acceptTodo");

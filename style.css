@@ -45,7 +45,7 @@ body {
   .modal--content {
     /* background: rgb(2,0,36); */
     /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 0%); */
-    background-color: rgba(201, 157, 106, 1); 
+    background-color: rgb(211, 192, 170); 
     margin: auto;
     padding: 40px;
     border: 1px solid #888;
