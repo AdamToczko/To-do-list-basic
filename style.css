@@ -83,36 +83,8 @@ body {
     text-decoration: line-through;
   }
 /* 
-  .btns {
-    position: fixed;
-    right: 2%;
-    display: inline-flex;
-    margin-right: 5%;
-    
-  }
-
-  .todo {
-    
-    font-size: 1.5em;
-  }
-
-  .header {
-    margin: 0 auto;
-    text-align: center;
-    background: url(./Images/header.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;  
-    height: 300px;
-    
-  }
-
-  #list {
-    margin: 0 auto;
-    text-align: center;
-    
-    margin-top: 3%;
-  }
-
+ 
+ 
   li:nth-child(odd) {
    
     background: linear-gradient(90deg, rgba(2,0,36,0.2) 0%, rgba(9,9,121,0.2) 0%, rgba(0,212,255,0.2) 0%);
@@ -178,8 +150,6 @@ body {
   width: 90%;
 }
 
-
-
 }
  */
 
@@ -188,8 +158,6 @@ body {
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  font-size: 30px;
-  line-height: 30px;
   list-style: none;
   padding: 5%;
 }
@@ -207,10 +175,11 @@ body {
 }
 
 .task-style {
-  width: 50%;
+  width: 60%;
   display: inline-block;
   position: relative;
   right: 12%;
+  font-size: 24px;
 }
 
 
