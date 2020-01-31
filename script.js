@@ -71,7 +71,7 @@ function prepareInitialList() {
 function addNewElementToList(title) {
  
   const newElement = createElement(title);
-  list.appendChild(newElement);
+  list.insertBefore(newElement, list.childNodes[0]); // changed so item is added first to list 
   
 }
 
