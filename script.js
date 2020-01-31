@@ -64,7 +64,7 @@ function addNewTodo() {
 
 function prepareInitialList() {
   data.forEach(todo=> {
-    addNewElementToList(todo);
+    addNewElementToList(todo.task);
   })
 }
 
