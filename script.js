@@ -53,7 +53,7 @@ function addNewItemViaForm (e) {
 function addNewTodo() {
   
   if (mainInput.value.trim() !== ''){
-    todosArray.push({task:mainInput.value, done: false});
+    todosArray.push(mainInput.value);
     localStorage.setItem('todos', JSON.stringify(todosArray));
     
     addNewElementToList(mainInput.value);
@@ -64,7 +64,7 @@ function addNewTodo() {
 
 function prepareInitialList() {
   data.forEach(todo=> {
-    addNewElementToList(todo.task);
+    addNewElementToList(todo);
   })
 }
 
