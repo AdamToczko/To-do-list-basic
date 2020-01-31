@@ -53,7 +53,7 @@ function addNewItemViaForm (e) {
 function addNewTodo() {
   
   if (mainInput.value.trim() !== ''){
-    todosArray.push(mainInput.value);
+    todosArray.push({task:mainInput.value, done: false});
     localStorage.setItem('todos', JSON.stringify(todosArray));
     
     addNewElementToList(mainInput.value);
