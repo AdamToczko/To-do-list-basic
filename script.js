@@ -15,8 +15,6 @@ let todosArray = localStorage.getItem("todos")
     ? JSON.parse(localStorage.getItem("todos"))
     : [];
 
-// const data = JSON.parse(localStorage.getItem('todos'));
-
 function main() {
     prepareDOMElements();
     prepareDOMEvents();
@@ -50,11 +48,8 @@ function addNewItemViaForm(e) {
 
 function addNewTodo() {
     if (mainInput.value.trim() !== "") {
-        console.log(todosArray);
         todosArray.push({ task: mainInput.value, done: false });
-        console.log(localStorage);
         localStorage.setItem("todos", JSON.stringify(todosArray));
-        console.log(localStorage);
         addNewElementToList(mainInput.value);
         mainInput.value = "";
     }
@@ -117,7 +112,6 @@ function listClickManager(event) {
 }
 
 function removeListElement() {
-    console.log(currentItem);
     const removeItem = document.querySelector(
         'li[data-id="' + currentItem + '"]'
     );
